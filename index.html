@@ -508,6 +508,51 @@
     </style>
 </head>
 <body>
+    <!-- Dynamic Source Script -->
+    <script>
+        // Function to get source code from URL
+        function getSourceCode() {
+            const hostname = window.location.hostname;
+            const pathname = window.location.pathname;
+            let sourceCode = 'xxx'; // default
+            
+            // Check if there's a path segment (e.g., example.com/romao)
+            const pathSegments = pathname.split('/').filter(segment => segment);
+            if (pathSegments.length > 0 && pathSegments[0].length >= 3) {
+                sourceCode = pathSegments[0].substring(0, 3).toLowerCase();
+            }
+            // Alternative: Check for subdomain (e.g., romao.example.com)
+            else {
+                const subdomainMatch = hostname.split('.');
+                if (subdomainMatch.length > 2 && subdomainMatch[0].length >= 3) {
+                    sourceCode = subdomainMatch[0].substring(0, 3).toLowerCase();
+                }
+            }
+            
+            return sourceCode;
+        }
+        
+        // Function to update all CTA links
+        function updateCTALinks() {
+            const sourceCode = getSourceCode();
+            const baseURL = 'https://rewarduplevel.com/aff_c?offer_id=2414&aff_id=1359&source=';
+            const newURL = baseURL + sourceCode;
+            
+            // Update all CTA buttons
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.href = newURL;
+            });
+            
+            // Log for debugging (remove in production)
+            console.log('Source code:', sourceCode);
+            console.log('Updated URL:', newURL);
+        }
+        
+        // Run when DOM is loaded
+        document.addEventListener('DOMContentLoaded', updateCTALinks);
+    </script>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
