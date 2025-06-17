@@ -195,6 +195,7 @@
         /* Rating */
         .rating-section {
             margin-top: 25px;
+            padding-bottom: 10px;
         }
 
         .stars {
@@ -212,26 +213,54 @@
 
         /* Influencer Section */
         .influencer-section {
-            margin-top: 50px;
-            padding: 45px 0 40px;
-            border-top: 1px solid #e5e5e5;
+            margin-top: 45px;
+            padding: 50px 0 45px;
             overflow: visible;
+            background: linear-gradient(to bottom, #FAFAFA 0%, #FFFFFF 100%);
+            position: relative;
+        }
+
+        .influencer-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: #DC2626;
+            border-radius: 1px;
+        }
+
+        .section-decoration {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #DC2626;
+            font-weight: 700;
         }
 
         .promoted-title {
-            font-size: 21px;
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 32px;
-            color: #333;
+            margin-bottom: 8px;
+            color: #222;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+        }
+
+        .influencer-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 32px;
+            font-weight: 400;
+            letter-spacing: 0.2px;
         }
 
         .influencer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
             gap: 22px 18px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             max-width: 680px;
             margin-left: auto;
             margin-right: auto;
@@ -277,7 +306,7 @@
             border: 2px solid #f5f5f5;
             object-fit: cover;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .influencer-item:hover .influencer-photo {
@@ -365,12 +394,26 @@
             }
 
             .influencer-section {
-                padding: 35px 0 30px;
-                margin-top: 40px;
+                padding: 40px 0 35px;
+                margin-top: 35px;
+            }
+
+            .influencer-section::before {
+                width: 40px;
+            }
+
+            .section-decoration {
+                font-size: 24px;
+                margin-bottom: 10px;
             }
 
             .promoted-title {
                 font-size: 18px;
+                margin-bottom: 6px;
+            }
+
+            .influencer-subtitle {
+                font-size: 14px;
                 margin-bottom: 22px;
             }
 
@@ -535,7 +578,9 @@
 
             <!-- Influencer Section -->
             <div class="influencer-section">
-                <h2 class="promoted-title">Promoted by:</h2>
+                <div class="section-decoration">✓</div>
+                <h2 class="promoted-title">Trusted By</h2>
+                <p class="influencer-subtitle">Recommended by influencers with millions of followers</p>
                 <div class="influencer-grid">
                     <div class="influencer-item">
                         <div class="influencer-avatar-wrapper">
