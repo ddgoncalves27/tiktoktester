@@ -8,6 +8,8 @@
     <link rel="icon" href="https://www.testerup.com/favicon.ico" type="image/x-icon">
     
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -15,29 +17,29 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
             background: #FFFFFF;
             color: #000000;
-            line-height: 1.6;
+            line-height: 1.4;
             overflow-x: hidden;
             min-height: 100vh;
         }
 
         /* Container */
         .container {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
+            text-align: center;
         }
 
         /* Header */
         .header {
-            text-align: center;
-            padding: 40px 20px 20px;
+            padding: 25px 0 15px;
         }
 
         .logo img {
-            max-width: 200px;
+            max-width: 170px;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -48,123 +50,124 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
+            padding: 20px 0;
         }
 
-        .progress-line {
+        .progress-dots {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 20px;
+            position: relative;
         }
 
         .dot {
-            width: 120px;
-            height: 8px;
-            background: #e0e0e0;
-            border-radius: 4px;
-            transition: all 0.3s ease;
+            width: 20px;
+            height: 20px;
+            background: #d0d0d0;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
         }
 
         .dot.active {
-            background: #DC2626;
-            transform: scaleY(1.5);
+            background: #333;
+        }
+
+        .dot:first-child {
+            margin-right: 50px;
+        }
+
+        .progress-dots::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            height: 2px;
+            background: #d0d0d0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
         }
 
         /* Main Content */
         .main-content {
-            padding: 40px 20px 80px;
-            text-align: center;
+            padding: 30px 20px 60px;
         }
 
         .wave-emoji {
-            font-size: 60px;
-            margin-bottom: 40px;
-            display: inline-block;
-            animation: wave 1s ease-in-out;
+            font-size: 56px;
+            margin-bottom: 35px;
         }
 
-        @keyframes wave {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(20deg); }
-            75% { transform: rotate(-20deg); }
-        }
-
-        h1 {
-            font-size: clamp(36px, 7vw, 72px);
-            font-weight: 900;
-            line-height: 1;
-            margin-bottom: 40px;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-        }
-
-        .description {
+        .location-text {
             font-size: 20px;
-            line-height: 1.6;
-            color: #333;
-            margin-bottom: 20px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            color: #666;
+            margin-bottom: 35px;
+            letter-spacing: 0.5px;
             font-weight: 400;
         }
 
+        .flag {
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        h1 {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 0.9;
+            margin: 0 auto 35px;
+            letter-spacing: -3px;
+            text-transform: uppercase;
+            color: #000;
+            font-family: 'Inter', Arial Black, sans-serif;
+            max-width: 700px;
+        }
+
+        .description {
+            font-size: 21px;
+            line-height: 1.5;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+        }
+
         .emoji-accent {
-            font-size: 32px;
-            margin: 30px 0;
+            font-size: 36px;
+            margin: 25px 0;
         }
 
         /* CTA Button */
-        .cta-wrapper {
-            margin: 50px 0;
-        }
-
         .cta-button {
             display: inline-block;
             background: #DC2626;
             color: #FFFFFF;
-            padding: 24px 60px;
-            font-size: 20px;
-            font-weight: 800;
+            padding: 28px 80px;
+            font-size: 24px;
+            font-weight: 900;
             text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border-radius: 60px;
+            transition: all 0.2s ease;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .cta-button:hover::before {
-            width: 300px;
-            height: 300px;
+            letter-spacing: 0.5px;
+            margin: 35px 0 40px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(220, 38, 38, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
         }
 
         .arrow {
             display: inline-block;
-            margin-left: 10px;
-            transition: transform 0.3s ease;
-            font-size: 24px;
+            margin-left: 12px;
+            font-size: 28px;
+            transition: transform 0.2s ease;
+            font-weight: 400;
         }
 
         .cta-button:hover .arrow {
@@ -173,95 +176,40 @@
 
         /* Rating */
         .rating-section {
-            margin-top: 60px;
+            margin-top: 40px;
         }
 
         .stars {
-            color: #FFD700;
+            color: #FFB800;
             font-size: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            letter-spacing: 3px;
         }
 
         .rating-text {
             color: #666;
             font-size: 16px;
-        }
-
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 80px;
-            padding: 60px 0;
-            border-top: 1px solid #eee;
-        }
-
-        .feature-item {
-            text-align: center;
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 20px;
-            background: #f8f8f8;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
-        }
-
-        .feature-item:hover .feature-icon {
-            background: #fff;
-            border-color: #DC2626;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .feature-desc {
-            font-size: 14px;
-            color: #666;
-            line-height: 1.4;
-        }
-
-        /* Footer */
-        .footer {
-            padding: 40px 20px;
-            text-align: center;
-            background: #f8f8f8;
-            color: #666;
-            font-size: 14px;
-            margin-top: 80px;
+            font-weight: 400;
         }
 
         /* Mobile */
         @media (max-width: 768px) {
             h1 {
-                font-size: 36px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
+                font-size: 48px;
+                letter-spacing: -2px;
             }
 
             .cta-button {
-                padding: 20px 40px;
-                font-size: 18px;
+                padding: 22px 50px;
+                font-size: 20px;
             }
 
             .description {
                 font-size: 18px;
+            }
+            
+            .location-text {
+                font-size: 16px;
             }
         }
     </style>
@@ -320,9 +268,9 @@
             </div>
         </header>
 
-        <!-- Progress Bar -->
+        <!-- Progress Dots -->
         <div class="progress-container">
-            <div class="progress-line">
+            <div class="progress-dots">
                 <div class="dot active"></div>
                 <div class="dot"></div>
             </div>
@@ -331,54 +279,30 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="wave-emoji">👋</div>
+            
+            <div class="location-text">
+                SERVICING TESTERS IN: <span class="flag">🇺🇸</span>
+            </div>
 
-            <h1>Start Testing Games & Earn Real Money</h1>
+            <h1>FREE GAME TESTING OPPORTUNITY</h1>
 
             <p class="description">
-                Join 312,000+ people who test games and apps from major developers. 
-                Earn money for every test you complete. It's that simple.
+                Claim your access to test games and earn money. 
+                This is strictly for people who want to earn extra income 
+                testing games. If that's you, then let's get you started today!
             </p>
 
             <div class="emoji-accent">🚀 🎮</div>
 
-            <div class="cta-wrapper">
-                <a href="https://rewarrdsgiant.com/aff_c?offer_id=2414&aff_id=86995&source=xxx" class="cta-button">
-                    Get Started <span class="arrow">→</span>
-                </a>
-            </div>
+            <a href="https://rewarrdsgiant.com/aff_c?offer_id=2414&aff_id=86995&source=xxx" class="cta-button">
+                Get Started <span class="arrow">→</span>
+            </a>
 
             <div class="rating-section">
                 <div class="stars">★★★★★</div>
-                <div class="rating-text">4.9 out of 5 based on 6,266 reviews</div>
-            </div>
-
-            <!-- Features Grid -->
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">💰</div>
-                    <div class="feature-title">Real Money</div>
-                    <div class="feature-desc">Get paid for every test completed</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎮</div>
-                    <div class="feature-title">Fun Games</div>
-                    <div class="feature-desc">Test the latest games before release</div>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
-                    <div class="feature-title">Quick Tests</div>
-                    <div class="feature-desc">15-30 minutes per test session</div>
-                </div>
+                <div class="rating-text">4.9 stars out of 6,266 reviews</div>
             </div>
         </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>
-                © 2025 Testerup. All rights reserved.<br>
-                Earnings vary based on participation and test availability.
-            </p>
-        </footer>
     </div>
 
 </body>
