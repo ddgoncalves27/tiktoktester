@@ -97,7 +97,7 @@
 
         /* Main Content */
         .main-content {
-            padding: 15px 20px 30px;
+            padding: 15px 25px 30px;
             overflow: visible;
         }
 
@@ -123,7 +123,7 @@
             font-size: 68px;
             font-weight: 900;
             line-height: 0.9;
-            margin: 0 auto 20px;
+            margin: 0 auto 22px;
             letter-spacing: -2.5px;
             text-transform: uppercase;
             color: #000;
@@ -132,10 +132,10 @@
         }
 
         .description {
-            font-size: 19px;
+            font-size: 18px;
             line-height: 1.4;
             color: #4a4a4a;
-            margin-bottom: 18px;
+            margin-bottom: 22px;
             max-width: 640px;
             margin-left: auto;
             margin-right: auto;
@@ -144,46 +144,60 @@
 
         .emoji-accent {
             font-size: 30px;
-            margin: 15px 0;
+            margin: 12px 0 8px;
         }
 
         /* CTA Button */
         .cta-button {
-            display: inline-block;
+            display: block;
+            width: 100%;
+            max-width: 440px;
+            margin: 30px auto 35px;
             background: #DC2626;
             color: #FFFFFF;
-            padding: 22px 65px;
-            font-size: 20px;
+            padding: 24px 40px;
+            font-size: 23px;
             font-weight: 900;
             text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            margin: 20px 0 25px;
+            border-radius: 14px;
+            border: none;
+            transition: all 0.15s ease;
+            text-transform: none;
+            letter-spacing: -0.02em;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+            position: relative;
+            box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.15);
+            text-align: center;
+            cursor: pointer;
         }
 
         .cta-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(220, 38, 38, 0.2);
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-button:active {
+            transform: translateY(4px);
+            box-shadow: none;
         }
 
         .arrow {
             display: inline-block;
-            margin-left: 8px;
-            font-size: 22px;
+            margin-left: 15px;
+            font-size: 26px;
             transition: transform 0.2s ease;
             font-weight: 400;
+            vertical-align: middle;
+            line-height: 0;
         }
 
         .cta-button:hover .arrow {
-            transform: translateX(3px);
+            transform: translateX(5px);
         }
 
         /* Rating */
         .rating-section {
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
         .stars {
@@ -324,12 +338,22 @@
             }
 
             .cta-button {
-                padding: 18px 45px;
-                font-size: 17px;
+                padding: 20px 30px;
+                font-size: 20px;
+                max-width: 100%;
+                margin: 25px auto 30px;
+                border-radius: 12px;
+            }
+
+            .arrow {
+                font-size: 22px;
+                margin-left: 12px;
             }
 
             .description {
-                font-size: 16px;
+                font-size: 15px;
+                margin-bottom: 20px;
+                line-height: 1.45;
             }
             
             .location-text {
@@ -343,6 +367,7 @@
             
             .emoji-accent {
                 font-size: 26px;
+                margin: 10px 0 5px;
             }
 
             .influencer-section {
@@ -389,6 +414,19 @@
         @media (max-width: 360px) {
             .logo img {
                 max-width: 150px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .cta-button {
+                font-size: 18px;
+                padding: 18px 25px;
+            }
+
+            .arrow {
+                font-size: 20px;
             }
 
             .influencer-grid {
