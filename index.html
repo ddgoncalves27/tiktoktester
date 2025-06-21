@@ -7,6 +7,24 @@
     <title>Testerup - Test Apps & Games | Get Rewarded</title>
     <link rel="icon" href="https://www.testerup.com/favicon.ico" type="image/x-icon">
     
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1292126512914723');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1292126512914723&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
         
@@ -31,7 +49,6 @@
             min-height: 100vh;
         }
 
-        /* Container - UPDATED: Removed max-width */
         .container {
             width: 100%;
             margin: 0 auto;
@@ -40,7 +57,6 @@
             overflow: visible;
         }
 
-        /* Header */
         .header {
             padding: 20px 0 16px;
         }
@@ -52,7 +68,6 @@
             margin: 0 auto;
         }
 
-        /* Progress Dots */
         .progress-container {
             display: flex;
             justify-content: center;
@@ -95,7 +110,6 @@
             z-index: 1;
         }
 
-        /* Main Content */
         .main-content {
             padding: 15px 20px 30px;
             overflow: visible;
@@ -128,7 +142,6 @@
             text-transform: uppercase;
             color: #000;
             font-family: 'Inter', Arial Black, sans-serif;
-            /* UPDATED: Removed max-width */
         }
 
         .description {
@@ -136,7 +149,7 @@
             line-height: 1.4;
             color: #4a4a4a;
             margin-bottom: 22px;
-            max-width: 800px; /* UPDATED: Increased from 640px for better readability on wide screens */
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             font-weight: 400;
@@ -147,11 +160,10 @@
             margin: 15px 0 20px;
         }
 
-        /* CTA Button */
         .cta-button {
             display: block;
             width: calc(100% - 40px);
-            max-width: 600px; /* UPDATED: Increased from 480px */
+            max-width: 600px;
             margin: 25px auto 30px;
             background: #DC2626;
             color: #FFFFFF;
@@ -192,7 +204,6 @@
             transform: translateX(7px);
         }
 
-        /* Rating */
         .rating-section {
             margin-top: 25px;
             padding-bottom: 10px;
@@ -211,7 +222,6 @@
             font-weight: 400;
         }
 
-        /* Influencer Section - UPDATED: Full width background */
         .influencer-section {
             margin-top: 45px;
             padding: 50px 20px 45px;
@@ -263,7 +273,7 @@
             grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
             gap: 22px 18px;
             margin-bottom: 10px;
-            max-width: 1200px; /* UPDATED: Increased from 680px */
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
             padding: 10px 15px;
@@ -349,7 +359,6 @@
             word-wrap: break-word;
         }
 
-        /* Desktop - Large Screens */
         @media (min-width: 1400px) {
             .container {
                 padding: 0 60px;
@@ -370,7 +379,6 @@
             }
         }
 
-        /* Mobile */
         @media (max-width: 768px) {
             .container {
                 padding: 0 15px;
@@ -476,7 +484,6 @@
             }
         }
 
-        /* Very small mobile */
         @media (max-width: 360px) {
             .container {
                 padding: 0 10px;
@@ -552,13 +559,17 @@
         // Function to update all CTA links
         function updateCTALinks() {
             const sourceCode = getSourceCode();
-            const baseURL = 'https://rewarrdsgiant.com/aff_c?offer_id=2414&aff_id=86995&source=';
+            const baseURL = 'https://track.zellfive.com/click?source=';
             const newURL = baseURL + sourceCode;
             
             // Update all CTA buttons
             const ctaButtons = document.querySelectorAll('.cta-button');
             ctaButtons.forEach(button => {
                 button.href = newURL;
+                // Add click event listener for ViewContent
+                button.addEventListener('click', () => {
+                    fbq('track', 'ViewContent');
+                });
             });
         }
         
@@ -600,7 +611,7 @@
 
             <div class="emoji-accent">🚀 🎮</div>
 
-            <a href="https://rewarrdsgiant.com/aff_c?offer_id=2414&aff_id=86995&source=xxx" class="cta-button">
+            <a href="https://track.zellfive.com/click?source=xxx" class="cta-button">
                 Start Testing <span class="arrow">→</span>
             </a>
 
@@ -709,6 +720,5 @@
             </div>
         </main>
     </div>
-
 </body>
 </html>
