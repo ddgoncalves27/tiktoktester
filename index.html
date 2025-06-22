@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Test apps and games for rewards - Join 312K+ testers providing feedback">
-    <title>Testerup - Test Apps & Games | Get Rewarded</title>
-    <link rel="icon" href="https://www.testerup.com/favicon.ico" type="image/x-icon">
+    <title>TesterUP - Start Earning Today</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Meta Pixel Code -->
     <script>
@@ -24,701 +25,824 @@
     src="https://www.facebook.com/tr?id=1292126512914723&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
-
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            overflow-x: hidden;
-            overflow-y: auto;
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fef2f2 0%, #fecaca 30%, #fca5a5 70%, #f87171 100%);
+            color: #1e293b;
+            min-height: 100vh;
+            line-height: 1.6;
+            position: relative;
         }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background: #FFFFFF;
-            color: #000000;
-            line-height: 1.4;
-            overflow-x: hidden;
-            overflow-y: visible;
-            min-height: 100vh;
+        /* Animated background elements */
+        .bg-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .shape1 {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape2 {
+            width: 80px;
+            height: 80px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .shape3 {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
         .container {
-            width: 100%;
+            max-width: 420px;
             margin: 0 auto;
-            padding: 0 20px;
-            text-align: center;
-            overflow: visible;
-        }
-
-        .header {
-            padding: 20px 0 16px;
-        }
-
-        .logo img {
-            max-width: 220px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .progress-container {
+            min-height: 100vh;
+            padding: 20px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            padding: 12px 0;
-        }
-
-        .progress-dots {
-            display: flex;
-            align-items: center;
             position: relative;
-        }
-
-        .dot {
-            width: 16px;
-            height: 16px;
-            background: #d5d5d5;
-            border-radius: 50%;
-            position: relative;
-            z-index: 2;
-        }
-
-        .dot.active {
-            background: #666;
-        }
-
-        .dot:first-child {
-            margin-right: 40px;
-        }
-
-        .progress-dots::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            right: 8px;
-            height: 2px;
-            background: #d5d5d5;
-            top: 50%;
-            transform: translateY(-50%);
             z-index: 1;
         }
 
-        .main-content {
-            padding: 15px 20px 30px;
-            overflow: visible;
-        }
-
-        .wave-emoji {
-            font-size: 46px;
-            margin-bottom: 20px;
-        }
-
-        .location-text {
-            font-size: 17px;
-            color: #666;
-            margin-bottom: 20px;
-            letter-spacing: 0.3px;
-            font-weight: 400;
-        }
-
-        .flag {
-            font-size: 20px;
-            margin-left: 8px;
-        }
-
-        h1 {
-            font-size: 68px;
-            font-weight: 900;
-            line-height: 0.9;
-            margin: 0 auto 20px;
-            letter-spacing: -2.5px;
-            text-transform: uppercase;
-            color: #000;
-            font-family: 'Inter', Arial Black, sans-serif;
-        }
-
-        .description {
-            font-size: 19px;
-            line-height: 1.4;
-            color: #4a4a4a;
-            margin-bottom: 22px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-        }
-
-        .emoji-accent {
-            font-size: 30px;
-            margin: 15px 0 20px;
-        }
-
-        .cta-button {
-            display: block;
-            width: calc(100% - 40px);
-            max-width: 600px;
-            margin: 25px auto 30px;
-            background: #DC2626;
-            color: #FFFFFF;
-            padding: 30px 40px;
-            font-size: 30px;
-            font-weight: 900;
-            text-decoration: none;
-            border-radius: 16px;
-            transition: all 0.15s ease;
-            letter-spacing: -1px;
-            font-family: 'Inter', Arial Black, -apple-system, BlinkMacSystemFont, sans-serif;
-            text-align: center;
-            border: none;
+        /* Live notification with better positioning */
+        .live-notification {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            padding: 14px 18px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: slideInFromTop 1s ease-out;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             position: relative;
-            line-height: 1;
-            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
-            text-transform: none;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            background: #B91C1C;
-            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
-        }
-
-        .arrow {
-            display: inline-block;
-            margin-left: 20px;
-            font-size: 34px;
-            transition: transform 0.15s ease;
-            font-weight: 400;
-            line-height: 0;
-            position: relative;
-            top: 2px;
-        }
-
-        .cta-button:hover .arrow {
-            transform: translateX(7px);
-        }
-
-        .rating-section {
-            margin-top: 25px;
-            padding-bottom: 10px;
-        }
-
-        .stars {
-            color: #FFB800;
-            font-size: 17px;
-            margin-bottom: 5px;
-            letter-spacing: 2px;
-        }
-
-        .rating-text {
-            color: #666;
-            font-size: 14px;
-            font-weight: 400;
-        }
-
-        .influencer-section {
-            margin-top: 45px;
-            padding: 50px 20px 45px;
-            overflow: visible;
-            background: linear-gradient(to bottom, #FAFAFA 0%, #FFFFFF 100%);
-            position: relative;
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-        }
-
-        .influencer-section::before {
+        .live-notification::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
+            left: 0;
+            right: 0;
             height: 2px;
-            background: #DC2626;
-            border-radius: 1px;
+            background: linear-gradient(90deg, #10b981, #059669);
+            border-radius: 20px 20px 0 0;
         }
 
-        .section-decoration {
-            font-size: 28px;
-            margin-bottom: 12px;
-            color: #DC2626;
-            font-weight: 700;
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
         }
 
-        .promoted-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #222;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.3); }
         }
 
-        .influencer-subtitle {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 32px;
-            font-weight: 400;
-            letter-spacing: 0.2px;
+        @keyframes slideInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .influencer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
-            gap: 22px 18px;
-            margin-bottom: 10px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 10px 15px;
-            overflow: visible;
+        .notification-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #059669;
         }
 
-        .influencer-item {
+        /* Main card with improved glassmorphism */
+        .main-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(25px);
+            border-radius: 32px;
+            padding: 40px 32px;
+            box-shadow: 
+                0 20px 80px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #1e293b;
+            animation: fadeInUp 1.2s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced logo section */
+        .logo-section {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .logo {
+            width: 88px;
+            height: 88px;
+            background: #ffffff;
+            border-radius: 24px;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            gap: 8px;
-            transition: transform 0.2s ease;
-            cursor: pointer;
-            padding: 8px 4px;
-            overflow: visible;
+            justify-content: center;
+            margin: 0 auto 24px auto;
+            box-shadow: 
+                0 12px 40px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
         }
 
-        .influencer-item:hover {
+        .logo::after {
+            display: none;
+        }
+
+        .logo img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+        }
+
+        .brand-title {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .progress-container {
+            background: rgba(148, 163, 184, 0.2);
+            border-radius: 20px;
+            height: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            height: 100%;
+            width: 78%;
+            border-radius: 20px;
+            transition: width 3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            animation: shimmer 2.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+
+        .progress-text {
+            font-size: 14px;
+            color: #64748b;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Improved main heading */
+        .main-heading {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1e293b;
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
+
+        /* Better steps section */
+        .steps-section {
+            margin-bottom: 40px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 24px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(248, 250, 252, 0.9));
+            border-radius: 24px;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            transform: scaleY(0);
+            transition: transform 0.5s ease;
+            border-radius: 2px;
+        }
+
+        .step:hover::before {
+            transform: scaleY(1);
+        }
+
+        .step:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.15);
+            border-color: rgba(220, 38, 38, 0.2);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+            position: relative;
+        }
+
+        .step-number::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .step-subtitle {
+            font-size: 15px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        /* Enhanced CTA Button */
+        .cta-button {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: #ffffff;
+            border: none;
+            padding: 20px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 60px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 12px 40px rgba(220, 38, 38, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 36px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            border-radius: 60px;
+            z-index: -1;
+            transition: all 0.4s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 20px 60px rgba(220, 38, 38, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-button:active {
             transform: translateY(-2px);
         }
 
-        @media (hover: none) {
-            .influencer-item:hover {
-                transform: none;
-            }
-        }
-
-        .influencer-avatar-wrapper {
+        /* Refined pro tip */
+        .pro-tip {
+            background: linear-gradient(135deg, rgba(254, 226, 226, 0.8), rgba(252, 165, 165, 0.6));
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            border-radius: 24px;
+            padding: 24px;
+            margin-bottom: 28px;
             position: relative;
-            width: 62px;
-            height: 62px;
-            overflow: visible;
-            border-radius: 50%;
-            z-index: 0;
+            backdrop-filter: blur(10px);
         }
 
-        .influencer-photo {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 2px solid #f5f5f5;
-            object-fit: cover;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-            transition: all 0.2s ease;
-        }
-
-        .influencer-item:hover .influencer-photo {
-            transform: scale(1.03);
-        }
-
-        @media (hover: none) {
-            .influencer-item:hover .influencer-photo {
-                transform: none;
-            }
-        }
-
-        .verified-check {
+        .pro-tip::before {
+            content: '';
             position: absolute;
-            top: -7px;
-            right: -7px;
-            width: 22px;
-            height: 22px;
-            background: white;
-            border-radius: 50%;
-            padding: 1px;
-            z-index: 1;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            border-radius: 24px 24px 0 0;
         }
 
-        .influencer-item:hover .verified-check {
-            transform: scale(1.1);
+        .pro-tip-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
         }
 
-        .influencer-name {
-            font-size: 11px;
-            color: #666;
+        .pro-tip-icon {
+            font-size: 20px;
+            margin-right: 12px;
+            filter: drop-shadow(0 2px 4px rgba(220, 38, 38, 0.3));
+        }
+
+        .pro-tip-label {
+            font-size: 16px;
+            font-weight: 700;
+            color: #991b1b;
+        }
+
+        .pro-tip-text {
+            font-size: 15px;
+            color: #7f1d1d;
+            line-height: 1.6;
+        }
+
+        /* Enhanced stats section */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.8), rgba(241, 245, 249, 0.9));
+            border-radius: 24px;
+            padding: 28px;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .stats-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 24px;
             text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px 16px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            border-radius: 20px 20px 0 0;
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .stat-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(220, 38, 38, 0.15);
+        }
+
+        .stat-number {
+            font-size: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #64748b;
             font-weight: 600;
             line-height: 1.2;
-            width: 100%;
-            word-wrap: break-word;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        @media (min-width: 1400px) {
+        /* Mobile optimizations */
+        @media (max-width: 480px) {
             .container {
-                padding: 0 60px;
+                padding: 16px;
             }
             
-            h1 {
-                font-size: 80px;
-            }
-            
-            .description {
-                max-width: 900px;
-                font-size: 21px;
-            }
-            
-            .influencer-grid {
-                max-width: 1400px;
-                gap: 30px 25px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
-            }
-            
-            .header {
-                padding: 16px 0 12px;
-            }
-            
-            .logo img {
-                max-width: 180px;
-            }
-            
-            h1 {
-                font-size: 40px;
-                letter-spacing: -1.5px;
-                line-height: 0.9;
+            .main-card {
+                padding: 32px 24px;
+                border-radius: 28px;
             }
 
-            .cta-button {
-                font-size: 26px;
-                padding: 26px 30px;
-                width: calc(100% - 30px);
-                margin: 20px auto 25px;
-                letter-spacing: -0.8px;
-            }
-            
-            .arrow {
-                font-size: 30px;
-                margin-left: 16px;
-            }
-            
-            .description {
-                font-size: 16px;
-                max-width: 100%;
-                padding: 0 10px;
-            }
-            
-            .location-text {
-                font-size: 15px;
-            }
-            
-            .wave-emoji {
-                font-size: 38px;
-                margin-bottom: 18px;
-            }
-            
-            .emoji-accent {
-                font-size: 26px;
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
             }
 
-            .influencer-section {
-                padding: 40px 15px 35px;
-                margin-top: 35px;
+            .step {
+                padding: 20px;
             }
 
-            .influencer-section::before {
-                width: 40px;
+            .step-number {
+                width: 28px;
+                height: 28px;
+                margin-right: 16px;
+                font-size: 13px;
             }
 
-            .section-decoration {
+            .brand-title {
+                font-size: 28px;
+            }
+
+            .main-heading {
                 font-size: 24px;
-                margin-bottom: 10px;
             }
 
-            .promoted-title {
-                font-size: 18px;
-                margin-bottom: 6px;
-            }
-
-            .influencer-subtitle {
-                font-size: 14px;
-                margin-bottom: 22px;
-            }
-
-            .influencer-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px 10px;
-                padding: 0 15px;
-            }
-
-            .influencer-avatar-wrapper {
-                width: 55px;
-                height: 55px;
-            }
-
-            .verified-check {
-                width: 18px;
-                height: 18px;
-                top: -5px;
-                right: -5px;
-                padding: 0.5px;
-            }
-
-            .influencer-item {
-                padding: 6px 0;
-                gap: 6px;
-            }
-
-            .influencer-name {
-                font-size: 10px;
-                line-height: 1.2;
+            .cta-button {
+                padding: 18px 32px;
+                font-size: 16px;
             }
         }
 
-        @media (max-width: 360px) {
-            .container {
-                padding: 0 10px;
-            }
-            
-            .logo img {
-                max-width: 150px;
-            }
-            
-            .cta-button {
-                font-size: 22px;
-                padding: 22px 25px;
-                letter-spacing: -0.5px;
-            }
-            
-            .arrow {
-                font-size: 26px;
-                margin-left: 12px;
-            }
+        /* Enhanced animations with better timing */
+        .step {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInStep 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
 
-            .influencer-grid {
-                gap: 15px 8px;
-                padding: 0 10px;
-            }
+        .step:nth-child(1) { animation-delay: 0.4s; }
+        .step:nth-child(2) { animation-delay: 0.6s; }
+        .step:nth-child(3) { animation-delay: 0.8s; }
 
-            .influencer-avatar-wrapper {
-                width: 45px;
-                height: 45px;
+        @keyframes slideInStep {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
+        }
 
-            .verified-check {
-                width: 16px;
-                height: 16px;
-                top: -3px;
-                right: -3px;
+        .cta-button {
+            opacity: 0;
+            transform: scale(0.95);
+            animation: popIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes popIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
             }
+        }
 
-            .influencer-name {
-                font-size: 9px;
-            }
+        .pro-tip, .stats-section {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
 
-            .influencer-item {
-                padding: 5px 0;
+        .pro-tip { animation-delay: 1.2s; }
+        .stats-section { animation-delay: 1.4s; }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Accessibility improvements */
+        .cta-button:focus,
+        .step:focus {
+            outline: 3px solid rgba(220, 38, 38, 0.5);
+            outline-offset: 2px;
+        }
+
+        /* Reduced motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Dynamic Source Script -->
-    <script>
-        // Function to get source code from URL
-        function getSourceCode() {
-            const hostname = window.location.hostname;
-            const pathname = window.location.pathname;
-            let sourceCode = 'xxx'; // default
-            
-            // Check if there's a path segment (e.g., example.com/romao)
-            const pathSegments = pathname.split('/').filter(segment => segment);
-            if (pathSegments.length > 0 && pathSegments[0].length >= 3) {
-                sourceCode = pathSegments[0].substring(0, 3).toLowerCase();
-            }
-            // Alternative: Check for subdomain (e.g., romao.example.com)
-            else {
-                const subdomainMatch = hostname.split('.');
-                if (subdomainMatch.length > 2 && subdomainMatch[0].length >= 3) {
-                    sourceCode = subdomainMatch[0].substring(0, 3).toLowerCase();
-                }
-            }
-            
-            return sourceCode;
-        }
-        
-        // Function to update all CTA links
-        function updateCTALinks() {
-            const sourceCode = getSourceCode();
-            const baseURL = 'https://track.zellfive.com/click?source=';
-            const newURL = baseURL + sourceCode;
-            
-            // Update all CTA buttons
-            const ctaButtons = document.querySelectorAll('.cta-button');
-            ctaButtons.forEach(button => {
-                button.href = newURL;
-                // Add click event listener for ViewContent
-                button.addEventListener('click', () => {
-                    fbq('track', 'ViewContent');
-                });
-            });
-        }
-        
-        // Run when DOM is loaded
-        document.addEventListener('DOMContentLoaded', updateCTALinks);
-    </script>
+    <div class="bg-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+    </div>
 
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo">
-                <img src="https://support.testerup.com/hc/theming_assets/01HZPRF677TRQ3BZBJ7TX0TYX4" alt="Testerup" />
-            </div>
-        </header>
-
-        <!-- Progress Dots -->
-        <div class="progress-container">
-            <div class="progress-dots">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-            </div>
+        <!-- Live notification -->
+        <div class="live-notification">
+            <div class="live-dot"></div>
+            <span class="notification-text" id="liveText">Marcus just earned $47.25 • 2 minutes ago</span>
         </div>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="wave-emoji">👋</div>
-            
-            <div class="location-text">
-                AVAILABLE FOR TESTERS IN: <span class="flag">🇺🇸</span>
+        <!-- Main card -->
+        <div class="main-card">
+            <!-- Logo section -->
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoVmKYO0ckcFX9C4SiKZPhjE6x5g2KKvV_6TFEXE2HbA&s" alt="TesterUP">
+                </div>
+                <h2 class="brand-title">TesterUP</h2>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <p class="progress-text">Setup almost complete...</p>
             </div>
 
-            <h1>JOIN OUR TESTING COMMUNITY</h1>
+            <!-- Main heading -->
+            <h1 class="main-heading">Follow these steps to start earning today!</h1>
 
-            <p class="description">
-                Test exciting apps and games. Share your feedback. Get rewarded. 
-                Join 312K+ testers who are helping shape the future of digital products 
-                while earning extra income. Ready to start testing?
-            </p>
+            <!-- Steps section -->
+            <div class="steps-section">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Download the TesterUP app</div>
+                        <div class="step-subtitle">Click the button below to get started</div>
+                    </div>
+                </div>
 
-            <div class="emoji-accent">🚀 🎮</div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Pick your favorite 3-5 games and level up</div>
+                        <div class="step-subtitle">Make $300+/day by leveling up in at least 2 games daily</div>
+                    </div>
+                </div>
 
-            <a href="https://track.zellfive.com/click?source=xxx" class="cta-button">
-                Start Testing <span class="arrow">→</span>
-            </a>
-
-            <div class="rating-section">
-                <div class="stars">★★★★★</div>
-                <div class="rating-text">4.9 stars out of 6,266 reviews</div>
-            </div>
-
-            <!-- Influencer Section -->
-            <div class="influencer-section">
-                <div class="section-decoration">✓</div>
-                <h2 class="promoted-title">Trusted By</h2>
-                <p class="influencer-subtitle">Recommended by influencers with millions of followers</p>
-                <div class="influencer-grid">
-                    <div class="influencer-item">
-                        <div class="influencer-avatar-wrapper">
-                            <img class="influencer-photo" src="https://inflownetwork.com/wp-content/uploads/2021/05/James-Charles-and-The-Never-Ending-Scandals.jpg" alt="James Charles" />
-                            <svg class="verified-check" viewBox="0 0 24 24" fill="none">
-                                <path d="M22.5 12.5C22.5 10.92 21.625 9.55 20.352 8.9C20.547 8.172 20.492 7.375 20.117 6.617C19.742 5.86 19.102 5.273 18.344 4.977C18.203 4.203 17.766 3.492 17.078 3.008C16.391 2.524 15.547 2.329 14.742 2.447C14.18 1.711 13.38 1.25 12.5 1.25C11.62 1.25 10.82 1.711 10.258 2.447C9.453 2.329 8.609 2.524 7.922 3.008C7.234 3.492 6.797 4.203 6.656 4.977C5.898 5.273 5.258 5.86 4.883 6.617C4.508 7.375 4.453 8.172 4.648 8.9C3.375 9.55 2.5 10.92 2.5 12.5C2.5 14.08 3.375 15.45 4.648 16.1C4.453 16.828 4.508 17.625 4.883 18.383C5.258 19.14 5.898 19.727 6.656 20.023C6.797 20.797 7.234 21.508 7.922 21.992C8.609 22.476 9.453 22.671 10.258 22.553C10.82 23.289 11.62 23.75 12.5 23.75C13.38 23.75 14.18 23.289 14.742 22.553C15.547 22.671 16.391 22.476 17.078 21.992C17.766 21.508 18.203 20.797 18.344 20.023C19.102 19.727 19.742 19.14 20.117 18.383C20.492 17.625 20.547 16.828 20.352 16.1C21.625 15.45 22.5 14.08 22.5 12.5Z" fill="#00A8E8"/>
-                                <path d="M11.375 15.375L8.625 12.625L9.875 11.375L11.375 12.875L15.125 9.125L16.375 10.375L11.375 15.375Z" fill="white"/>
-                            </svg>
-                        </div>
-                        <span class="influencer-name">James Charles</span>
-                    </div>
-                    <div class="influencer-item">
-                        <div class="influencer-avatar-wrapper">
-                            <img class="influencer-photo" src="https://www.cameo.com/cdn-cgi/image/fit=cover,format=auto,width=500,height=500/https://cdn.cameo.com/resizer/static/user/UOUwWJDpz-B4D2CCE3-DBBC-44EE-B2CB-A80E81F10AD8.jpg" alt="Lucas & Marcus" />
-                            <svg class="verified-check" viewBox="0 0 24 24" fill="none">
-                                <path d="M22.5 12.5C22.5 10.92 21.625 9.55 20.352 8.9C20.547 8.172 20.492 7.375 20.117 6.617C19.742 5.86 19.102 5.273 18.344 4.977C18.203 4.203 17.766 3.492 17.078 3.008C16.391 2.524 15.547 2.329 14.742 2.447C14.18 1.711 13.38 1.25 12.5 1.25C11.62 1.25 10.82 1.711 10.258 2.447C9.453 2.329 8.609 2.524 7.922 3.008C7.234 3.492 6.797 4.203 6.656 4.977C5.898 5.273 5.258 5.86 4.883 6.617C4.508 7.375 4.453 8.172 4.648 8.9C3.375 9.55 2.5 10.92 2.5 12.5C2.5 14.08 3.375 15.45 4.648 16.1C4.453 16.828 4.508 17.625 4.883 18.383C5.258 19.14 5.898 19.727 6.656 20.023C6.797 20.797 7.234 21.508 7.922 21.992C8.609 22.476 9.453 22.671 10.258 22.553C10.82 23.289 11.62 23.75 12.5 23.75C13.38 23.75 14.18 23.289 14.742 22.553C15.547 22.671 16.391 22.476 17.078 21.992C17.766 21.508 18.203 20.797 18.344 20.023C19.102 19.727 19.742 19.14 20.117 18.383C20.492 17.625 20.547 16.828 20.352 16.1C21.625 15.45 22.5 14.08 22.5 12.5Z" fill="#00A8E8"/>
-                                <path d="M11.375 15.375L8.625 12.625L9.875 11.375L11.375 12.875L15.125 9.125L16.375 10.375L11.375 15.375Z" fill="white"/>
-                            </svg>
-                        </div>
-                        <span class="influencer-name">Lucas & Marcus</span>
-                    </div>
-                    <div class="influencer-item">
-                        <div class="influencer-avatar-wrapper">
-                            <img class="influencer-photo" src="https://yt3.googleusercontent.com/7QnpPqeHqvT62fzS5Sod1D73L8jkgb01WZqV8M5iQSj4aNgev6NVLZe4LqNAydaiAfUScRcB1Q=s900-c-k-c0x00ffffff-no-rj" alt="Brooke Monk" />
-                            <svg class="verified-check" viewBox="0 0 24 24" fill="none">
-                                <path d="M22.5 12.5C22.5 10.92 21.625 9.55 20.352 8.9C20.547 8.172 20.492 7.375 20.117 6.617C19.742 5.86 19.102 5.273 18.344 4.977C18.203 4.203 17.766 3.492 17.078 3.008C16.391 2.524 15.547 2.329 14.742 2.447C14.18 1.711 13.38 1.25 12.5 1.25C11.62 1.25 10.82 1.711 10.258 2.447C9.453 2.329 8.609 2.524 7.922 3.008C7.234 3.492 6.797 4.203 6.656 4.977C5.898 5.273 5.258 5.86 4.883 6.617C4.508 7.375 4.453 8.172 4.648 8.9C3.375 9.55 2.5 10.92 2.5 12.5C2.5 14.08 3.375 15.45 4.648 16.1C4.453 16.828 4.508 17.625 4.883 18.383C5.258 19.14 5.898 19.727 6.656 20.023C6.797 20.797 7.234 21.508 7.922 21.992C8.609 22.476 9.453 22.671 10.258 22.553C10.82 23.289 11.62 23.75 12.5 23.75C13.38 23.75 14.18 23.289 14.742 22.553C15.547 22.671 16.391 22.476 17.078 21.992C17.766 21.508 18.203 20.797 18.344 20.023C19.102 19.727 19.742 19.14 20.117 18.383C20.492 17.625 20.547 16.828 20.352 16.1C21.625 15.45 22.5 14.08 22.5 12.5Z" fill="#00A8E8"/>
-                                <path d="M11.375 15.375L8.625 12.625L9.875 11.375L11.375 12.875L15.125 9.125L16.375 10.375L11.375 15.375Z" fill="white"/>
-                            </svg>
-                        </div>
-                        <span class="influencer-name">Brooke Monk</span>
-                    </div>
-                    <div class="influencer-item">
-                        <div class="influencer-avatar-wrapper">
-                            <img class="influencer-photo" src="https://www.rollingstone.com/wp-content/uploads/2024/07/liza-koshy-family-affair-interview.jpg?w=1581&h=1054&crop=1" alt="Liza Koshy" />
-                            <svg class="verified-check" viewBox="0 0 24 24" fill="none">
-                                <path d="M22.5 12.5C22.5 10.92 21.625 9.55 20.352 8.9C20.547 8.172 20.492 7.375 20.117 6.617C19.742 5.86 19.102 5.273 18.344 4.977C18.203 4.203 17.766 3.492 17.078 3.008C16.391 2.524 15.547 2.329 14.742 2.447C14.18 1.711 13.38 1.25 12.5 1.25C11.62 1.25 10.82 1.711 10.258 2.447C9.453 2.329 8.609 2.524 7.922 3.008C7.234 3.492 6.797 4.203 6.656 4.977C5.898 5.273 5.258 5.86 4.883 6.617C4.508 7.375 4.453 8.172 4.648 8.9C3.375 9.55 2.5 10.92 2.5 12.5C2.5 14.08 3.375 15.45 4.648 16.1C4.453 16.828 4.508 17.625 4.883 18.383C5.258 19.14 5.898 19.727 6.656 20.023C6.797 20.797 7.234 21.508 7.922 21.992C8.609 22.476 9.453 22.671 10.258 22.553C10.82 23.289 11.62 23.75 12.5 23.75C13.38 23.75 14.18 23.289 14.742 22.553C15.547 22.671 16.391 22.476 17.078 21.992C17.766 21.508 18.203 20.797 18.344 20.023C19.102 19.727 19.742 19.14 20.117 18.383C20.492 17.625 20.547 16.828 20.352 16.1C21.625 15.45 22.5 14.08 22.5 12.5Z" fill="#00A8E8"/>
-                                <path d="M11.375 15.375L8.625 12.625L9.875 11.375L11.375 12.875L15.125 9.125L16.375 10.375L11.375 15.375Z" fill="white"/>
-                            </svg>
-                        </div>
-                        <span class="influencer-name">Liza Koshy</span>
-                    </div>
-                    <div class="influencer-item">
-                        <div class="influencer-avatar-wrapper">
-                            <img class="influencer-photo" src="https://leaders.com/wp-content/uploads/2023/02/Copy-of-Database-bio-profile-pic-69.png" alt="Savannah LaBrant" />
-                            <svg class="verified-check" viewBox="0 0 24 24" fill="none">
-                                <path d="M22.5 12.5C22.5 10.92 21.625 9.55 20.352 8.9C20.547 8.172 20.492 7.375 20.117 6.617C19.742 5.86 19.102 5.273 18.344 4.977C18.203 4.203 17.766 3.492 17.078 3.008C16.391 2.524 15.547 2.329 14.742 2.447C14.18 1.711 13.38 1.25 12.5 1.25C11.62 1.25 10.82 1.711 10.258 2.447C9.453 2.329 8.609 2.524 7.922 3.008C7.234 3.492 6.797 4.203 6.656 4.977C5.898 5.273 5.258 5.86 4.883 6.617C4.508 7.375 4.453 8.172 4.648 8.9C3.375 9.55 2.5 10.92 2.5 12.5C2.5 14.08 3.375 15.45 4.648 16.1C4.453 16.828 4.508 17.625 4.883 18.383C5.258 19.14 5.898 19.727 6.656 20.023C6.797 20.797 7.234 21.508 7.922 21.992C8.609 22.476 9.453 22.671 10.258 22.553C10.82 23.289 11.62 23.75 12.5 23.75C13.38 23.75 14.18 23.289 14.742 22.553C15.547 22.671 16.391 22.476 17.078 21.992C17.766 21.508 18.203 20.797 18.344 20.023C19.102 19.727 19.742 19.14 20.117 18.383C20.492 17.625 20.547 16.828 20.352 16.1C21.625 15.45 22.5 14.08 22.5 12.5Z" fill="#00A8E8"/>
-                                <path d="M11.375 15.375L8.625 12.625L9.875 11.375L11.375 12.875L15.125 9.125L16.375 10.375L11.375 15.375Z" fill="white"/>
-                            </svg>
-                        </div>
-                        <span class="influencer-name">Savannah LaBrant</span>
-                    </div>
-                    <div class="influencer-item">
-                        <div class="influencer-avatar-wrapper">
-                            <img class="influencer-photo" src="https://hips.hearstapps.com/hmg-prod/images/screen-shot-2020-08-06-at-12-12-16-pm-1596730355.png" alt="Iarray" />
-                            <svg class="verified-check" viewBox="0 0 24 24" fill="none">
-                                <path d="M22.5 12.5C22.5 10.92 21.625 9.55 20.352 8.9C20.547 8.172 20.492 7.375 20.117 6.617C19.742 5.86 19.102 5.273 18.344 4.977C18.203 4.203 17.766 3.492 17.078 3.008C16.391 2.524 15.547 2.329 14.742 2.447C14.18 1.711 13.38 1.25 12.5 1.25C11.62 1.25 10.82 1.711 10.258 2.447C9.453 2.329 8.609 2.524 7.922 3.008C7.234 3.492 6.797 4.203 6.656 4.977C5.898 5.273 5.258 5.86 4.883 6.617C4.508 7.375 4.453 8.172 4.648 8.9C3.375 9.55 2.5 10.92 2.5 12.5C2.5 14.08 3.375 15.45 4.648 16.1C4.453 16.828 4.508 17.625 4.883 18.383C5.258 19.14 5.898 19.727 6.656 20.023C6.797 20.797 7.234 21.508 7.922 21.992C8.609 22.476 9.453 22.671 10.258 22.553C10.82 23.289 11.62 23.75 12.5 23.75C13.38 23.75 14.18 23.289 14.742 22.553C15.547 22.671 16.391 22.476 17.078 21.992C17.766 21.508 18.203 20.797 18.344 20.023C19.102 19.727 19.742 19.14 20.117 18.383C20.492 17.625 20.547 16.828 20.352 16.1C21.625 15.45 22.5 14.08 22.5 12.5Z" fill="#00A8E8"/>
-                                <path d="M11.375 15.375L8.625 12.625L9.875 11.375L11.375 12.875L15.125 9.125L16.375 10.375L11.375 15.375Z" fill="white"/>
-                            </svg>
-                        </div>
-                        <span class="influencer-name">Iarray</span>
-                    </div>
-                    <div class="influencer-item">
-                        <div class="influencer-avatar-wrapper">
-                            <img class="influencer-photo" src="https://brand-innovators.com/wp-content/uploads/2024/01/62d9a4139a886871cf17d8e5_Dobrik-David-scaled.jpg" alt="David Dobrik" />
-                            <svg class="verified-check" viewBox="0 0 24 24" fill="none">
-                                <path d="M22.5 12.5C22.5 10.92 21.625 9.55 20.352 8.9C20.547 8.172 20.492 7.375 20.117 6.617C19.742 5.86 19.102 5.273 18.344 4.977C18.203 4.203 17.766 3.492 17.078 3.008C16.391 2.524 15.547 2.329 14.742 2.447C14.18 1.711 13.38 1.25 12.5 1.25C11.62 1.25 10.82 1.711 10.258 2.447C9.453 2.329 8.609 2.524 7.922 3.008C7.234 3.492 6.797 4.203 6.656 4.977C5.898 5.273 5.258 5.86 4.883 6.617C4.508 7.375 4.453 8.172 4.648 8.9C3.375 9.55 2.5 10.92 2.5 12.5C2.5 14.08 3.375 15.45 4.648 16.1C4.453 16.828 4.508 17.625 4.883 18.383C5.258 19.14 5.898 19.727 6.656 20.023C6.797 20.797 7.234 21.508 7.922 21.992C8.609 22.476 9.453 22.671 10.258 22.553C10.82 23.289 11.62 23.75 12.5 23.75C13.38 23.75 14.18 23.289 14.742 22.553C15.547 22.671 16.391 22.476 17.078 21.992C17.766 21.508 18.203 20.797 18.344 20.023C19.102 19.727 19.742 19.14 20.117 18.383C20.492 17.625 20.547 16.828 20.352 16.1C21.625 15.45 22.5 14.08 22.5 12.5Z" fill="#00A8E8"/>
-                                <path d="M11.375 15.375L8.625 12.625L9.875 11.375L11.375 12.875L15.125 9.125L16.375 10.375L11.375 15.375Z" fill="white"/>
-                            </svg>
-                        </div>
-                        <span class="influencer-name">David Dobrik</span>
-                    </div>
-                    <div class="influencer-item">
-                        <div class="influencer-avatar-wrapper">
-                            <img class="influencer-photo" src="https://theshaderoom.com/wp-content/uploads/2025/03/Skai-Jackson-Calls-Out-Trolls-For-Criticizing-Her-Newborn-Sons-Skin-Complexion-e1742600459941.jpg" alt="Skai Jackson" />
-                            <svg class="verified-check" viewBox="0 0 24 24" fill="none">
-                                <path d="M22.5 12.5C22.5 10.92 21.625 9.55 20.352 8.9C20.547 8.172 20.492 7.375 20.117 6.617C19.742 5.86 19.102 5.273 18.344 4.977C18.203 4.203 17.766 3.492 17.078 3.008C16.391 2.524 15.547 2.329 14.742 2.447C14.18 1.711 13.38 1.25 12.5 1.25C11.62 1.25 10.82 1.711 10.258 2.447C9.453 2.329 8.609 2.524 7.922 3.008C7.234 3.492 6.797 4.203 6.656 4.977C5.898 5.273 5.258 5.86 4.883 6.617C4.508 7.375 4.453 8.172 4.648 8.9C3.375 9.55 2.5 10.92 2.5 12.5C2.5 14.08 3.375 15.45 4.648 16.1C4.453 16.828 4.508 17.625 4.883 18.383C5.258 19.14 5.898 19.727 6.656 20.023C6.797 20.797 7.234 21.508 7.922 21.992C8.609 22.476 9.453 22.671 10.258 22.553C10.82 23.289 11.62 23.75 12.5 23.75C13.38 23.75 14.18 23.289 14.742 22.553C15.547 22.671 16.391 22.476 17.078 21.992C17.766 21.508 18.203 20.797 18.344 20.023C19.102 19.727 19.742 19.14 20.117 18.383C20.492 17.625 20.547 16.828 20.352 16.1C21.625 15.45 22.5 14.08 22.5 12.5Z" fill="#00A8E8"/>
-                                <path d="M11.375 15.375L8.625 12.625L9.875 11.375L11.375 12.875L15.125 9.125L16.375 10.375L11.375 15.375Z" fill="white"/>
-                            </svg>
-                        </div>
-                        <span class="influencer-name">Skai Jackson</span>
-                    </div>
-                    <div class="influencer-item">
-                        <div class="influencer-avatar-wrapper">
-                            <img class="influencer-photo" src="https://s1.ticketm.net/dam/a/41f/feeb5621-0697-4567-a857-e1fa0229141f_TABLET_LANDSCAPE_3_2.jpg" alt="Madison Beer" />
-                            <svg class="verified-check" viewBox="0 0 24 24" fill="none">
-                                <path d="M22.5 12.5C22.5 10.92 21.625 9.55 20.352 8.9C20.547 8.172 20.492 7.375 20.117 6.617C19.742 5.86 19.102 5.273 18.344 4.977C18.203 4.203 17.766 3.492 17.078 3.008C16.391 2.524 15.547 2.329 14.742 2.447C14.18 1.711 13.38 1.25 12.5 1.25C11.62 1.25 10.82 1.711 10.258 2.447C9.453 2.329 8.609 2.524 7.922 3.008C7.234 3.492 6.797 4.203 6.656 4.977C5.898 5.273 5.258 5.86 4.883 6.617C4.508 7.375 4.453 8.172 4.648 8.9C3.375 9.55 2.5 10.92 2.5 12.5C2.5 14.08 3.375 15.45 4.648 16.1C4.453 16.828 4.508 17.625 4.883 18.383C5.258 19.14 5.898 19.727 6.656 20.023C6.797 20.797 7.234 21.508 7.922 21.992C8.609 22.476 9.453 22.671 10.258 22.553C10.82 23.289 11.62 23.75 12.5 23.75C13.38 23.75 14.18 23.289 14.742 22.553C15.547 22.671 16.391 22.476 17.078 21.992C17.766 21.508 18.203 20.797 18.344 20.023C19.102 19.727 19.742 19.14 20.117 18.383C20.492 17.625 20.547 16.828 20.352 16.1C21.625 15.45 22.5 14.08 22.5 12.5Z" fill="#00A8E8"/>
-                                <path d="M11.375 15.375L8.625 12.625L9.875 11.375L11.375 12.875L15.125 9.125L16.375 10.375L11.375 15.375Z" fill="white"/>
-                            </svg>
-                        </div>
-                        <span class="influencer-name">Madison Beer</span>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Request payout and keep playing!</div>
+                        <div class="step-subtitle">HACK: Upgrade 3 times in 1 game to unlock $200 bonus today!</div>
                     </div>
                 </div>
             </div>
-        </main>
+
+            <!-- CTA Button -->
+            <button class="cta-button" onclick="redirectToApp()">
+                Start Earning Now
+            </button>
+
+            <!-- Pro tip -->
+            <div class="pro-tip">
+                <div class="pro-tip-header">
+                    <span class="pro-tip-icon">💡</span>
+                    <span class="pro-tip-label">PRO TIP:</span>
+                </div>
+                <p class="pro-tip-text">Bonus missions (like upgrading in-game) can boost your payout by $150-$300/week.</p>
+            </div>
+
+            <!-- Stats section -->
+            <div class="stats-section">
+                <div class="stats-title">Platform Stats</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">3.2M+</div>
+                        <div class="stat-label">Active Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$2.3M</div>
+                        <div class="stat-label">Paid Out</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.3★</div>
+                        <div class="stat-label">App Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        // Live notifications with better variety
+        const notifications = [
+            "Marcus just earned $47.25 • 2 minutes ago",
+            "Sarah completed survey for $23.50 • 4 minutes ago",
+            "Alex leveled up and earned $89.75 • 6 minutes ago",
+            "Jessica cashed out $156.20 • 8 minutes ago",
+            "Mike unlocked $34.90 bonus • 11 minutes ago",
+            "Emma finished game test for $67.40 • 13 minutes ago"
+        ];
+
+        let currentIndex = 0;
+
+        function updateLiveNotification() {
+            const liveText = document.getElementById('liveText');
+            
+            // Smooth fade transition
+            liveText.style.transition = 'opacity 0.3s ease';
+            liveText.style.opacity = '0.5';
+            
+            setTimeout(() => {
+                liveText.textContent = notifications[currentIndex];
+                liveText.style.opacity = '1';
+                currentIndex = (currentIndex + 1) % notifications.length;
+            }, 300);
+        }
+
+        // Enhanced redirect function with loading state
+        function redirectToApp() {
+            const button = document.querySelector('.cta-button');
+            const originalText = button.textContent;
+            
+            // Show loading state
+            button.textContent = 'Redirecting...';
+            button.style.background = 'linear-gradient(135deg, #6b7280, #4b5563)';
+            button.style.transform = 'scale(0.98)';
+            
+            setTimeout(() => {
+                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+                const isAndroid = /Android/.test(navigator.userAgent);
+                
+                if (isIOS) {
+                    window.location.href = 'https://apps.apple.com/us/app/testerup-earn-money/id1241984225';
+                } else if (isAndroid) {
+                    window.location.href = 'https://play.google.com/store/apps/details?id=com.testerup.android';
+                } else {
+                    window.location.href = 'https://testerup.com';
+                }
+            }, 800);
+        }
+
+        // Initialize with better timing
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update live notification every 9 seconds
+            setInterval(updateLiveNotification, 9000);
+            
+            // Progress bar animation with easing
+            setTimeout(() => {
+                const progressBar = document.getElementById('progressBar');
+                progressBar.style.width = '88%';
+            }, 2000);
+            
+            // Add subtle interaction feedback
+            document.querySelectorAll('.step').forEach(step => {
+                step.addEventListener('mouseenter', () => {
+                    step.style.transform = 'translateY(-4px) scale(1.02)';
+                });
+                
+                step.addEventListener('mouseleave', () => {
+                    step.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        // Enhanced click tracking
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            // Analytics tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'event_category': 'TesterUP',
+                    'event_label': 'Bridge Page CTA Click',
+                    'value': 1
+                });
+            }
+            
+            // Custom event for additional tracking
+            window.dispatchEvent(new CustomEvent('cta_clicked', {
+                detail: { source: 'bridge_page', timestamp: Date.now() }
+            }));
+        });
+    </script>
 </body>
 </html>
