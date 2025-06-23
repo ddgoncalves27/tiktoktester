@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d97f5a">
+    <meta name="msapplication-navbutton-color" content="#d97f5a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>TesterUP - Start Earning Today</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,6 +56,8 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         /* Main container */
@@ -63,7 +69,6 @@
             padding: 20px 20px 50px 20px;
             position: relative;
             z-index: 1;
-            min-height: 100vh;
         }
 
         /* Live notification */
@@ -359,10 +364,6 @@
 
         /* Mobile specific adjustments */
         @media (max-height: 700px) {
-            .scroll-wrapper {
-                -webkit-overflow-scrolling: touch;
-            }
-            
             .container {
                 padding: 15px 15px 40px 15px;
             }
@@ -470,28 +471,12 @@
             body {
                 background-attachment: scroll;
             }
-            
-            .scroll-wrapper {
-                -webkit-overflow-scrolling: touch;
-            }
         }
         
         /* iOS specific fix */
         @supports (-webkit-touch-callout: none) {
             body {
                 background-attachment: scroll;
-            }
-            
-            .scroll-wrapper {
-                -webkit-overflow-scrolling: touch;
-            }
-        }
-        
-        /* Ensure proper scrolling on all devices */
-        @media screen and (min-height: 600px) {
-            .scroll-wrapper {
-                -webkit-overflow-scrolling: touch;
-                scroll-behavior: smooth;
             }
         }
     </style>
@@ -589,7 +574,6 @@
             </div>
         </div>
     </div>
-    <!-- End scroll wrapper -->
 
     <script>
         // Live notifications array
